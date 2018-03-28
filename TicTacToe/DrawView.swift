@@ -45,7 +45,7 @@ class DrawView: UIView{
     @IBInspectable var pendingShapeColor: UIColor = UIColor.green{didSet{setNeedsDisplay();}}
     @IBInspectable var winningLineColor: UIColor = UIColor.purple{didSet{setNeedsDisplay();}}
     @IBInspectable var winningLineThickness: CGFloat = 15{didSet{setNeedsDisplay();}}
-
+    
     //register double-tap to clear gesture
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder);
@@ -59,16 +59,20 @@ class DrawView: UIView{
     @objc func doubleTap(_ gestureRecognizer: UITapGestureRecognizer){
         print("I got a double tap");
         if win != -1 {
-            finishedLines.removeAll(keepingCapacity: false);
-            finishedShapes.removeAll(keepingCapacity: false);
-            linePoints.removeAll(keepingCapacity: false);
-            isBoardDrawn = false;
-            lblWinner!.text = "";
-            lastMove = -1;
-            winningLine = nil;
-            board.reset();
-            setNeedsDisplay();
+            reset();
         }
+    }
+    
+    func reset() {
+        finishedLines.removeAll(keepingCapacity: false);
+        finishedShapes.removeAll(keepingCapacity: false);
+        linePoints.removeAll(keepingCapacity: false);
+        isBoardDrawn = false;
+        lblWinner!.text = "";
+        lastMove = -1;
+        winningLine = nil;
+        board.reset();
+        setNeedsDisplay();
     }
 
     //draw a line
@@ -121,6 +125,10 @@ class DrawView: UIView{
         if winningLine != nil {
             winningLineColor.setStroke();
             strokeLine(line: winningLine!, lineThickness: winningLineThickness);
+        }
+        
+        if lastMove != -1 && win == -1 {
+            lblWinner.text = (lastMove == X_PLAY) ? "Os Turn" : "Xs Turn";
         }
     }
 

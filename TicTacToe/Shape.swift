@@ -53,7 +53,7 @@ struct Shape {
         }
         
         let avgSlope = totalSlope/CGFloat(lines.count);
-        if abs(lineSlope-avgSlope) < 1 { return true; }
+        if abs(lineSlope-avgSlope) < 5 { return true; }
         return false;
     }
     
