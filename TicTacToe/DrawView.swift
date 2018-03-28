@@ -252,7 +252,6 @@ class DrawView: UIView{
                     lblWinner.text = "Tie!";
                     setNeedsDisplay();
                 }else if win != -1 {
-                    // TODO: draw line over winning characters
                     let char = (win == X_PLAY) ? "X" : "O";
                     lblWinner.text = "\(char) Wins!";
                     makeWinningLine(location: result[1]);
