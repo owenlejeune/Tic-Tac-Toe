@@ -1,2 +1,10 @@
 *.DS_Store
 ._*
+._TicTacToe.xcodeproj
+TicTacToe.xcodeproj/._project.xcworkspace
+TicTacToe/._AppDelegate.swift
+TicTacToe/._Board.swift
+TicTacToe/._DrawView.swift
+TicTacToe/._Line.swift
+TicTacToe/._Shape.swift
+TicTacToe/Base.lproj/._Main.storyboard
