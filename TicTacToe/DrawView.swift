@@ -75,8 +75,8 @@ class DrawView: UIView{
     func strokeLine(line: Line, lineThickness: CGFloat){
         let path = UIBezierPath();
         path.lineWidth = lineThickness;
+        
         path.lineCapStyle = CGLineCap.round;
-
         path.move(to: line.begin);
         path.addLine(to: line.end);
         path.stroke();
