@@ -41,7 +41,8 @@ class DrawView: UIView{
     @IBInspectable var finishedLineColor: UIColor = UIColor.black{didSet{setNeedsDisplay();}}
     @IBInspectable var currentLineColor: UIColor = UIColor.red{didSet{setNeedsDisplay();}}
     @IBInspectable var lineThickness: CGFloat = 5{didSet{setNeedsDisplay();}}
-    @IBInspectable var finishedShapeColor: UIColor = UIColor.blue{didSet{setNeedsDisplay();}}
+    @IBInspectable var finishedXColor: UIColor = UIColor.blue{didSet{setNeedsDisplay();}}
+    @IBInspectable var finishedOColor: UIColor = UIColor.orange{didSet{setNeedsDisplay();}}
     @IBInspectable var pendingShapeColor: UIColor = UIColor.green{didSet{setNeedsDisplay();}}
     @IBInspectable var winningLineColor: UIColor = UIColor.purple{didSet{setNeedsDisplay();}}
     @IBInspectable var winningLineThickness: CGFloat = 15{didSet{setNeedsDisplay();}}
@@ -93,10 +94,10 @@ class DrawView: UIView{
         for line in finishedLines{
             strokeLine(line: line, lineThickness: lineThickness);
         }
-        
-        finishedShapeColor.setStroke();
 
         for shape in finishedShapes{
+            let colour = (shape.isO()) ? finishedOColor : finishedXColor;
+            colour.setStroke();
             for line in shape.lines{
                 strokeLine(line: line, lineThickness: lineThickness);
             }
