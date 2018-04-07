@@ -1,10 +1,6 @@
 # Tic-Tac-Toe
 A simple touch-gesture-based game of Tic-Tac-Toe for iOS
 
-### Developer Information
-* Owen LeJeune
-* 101034825
-
 ### Usage and Tesing
 1. Begin the game by drawing a game board.
     * Support for multitouch gestures to draw the lines has been implemented
