@@ -11,7 +11,3 @@ A simple touch-gesture-based game of Tic-Tac-Toe for iOS
 5. A printout of the board is displayed in the console after every move
 6. When a player gets 3 in a row, a line will drawn the winning row, and the prompt will display the winner
 7. Once the game has finished in either a win or tie, double tapping on the screen will clear the screen and a new game board can be drawn
-
-### Enhancements
-* Label to display current players turn and game completion state (win/tie)
-* Different colours when drawing X or O
